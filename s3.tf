@@ -1,5 +1,10 @@
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+  prefix      = "instance-scheduler-"
+}
+
 resource "aws_s3_bucket" "cf_templates" {
-  bucket = "aonsw-instance-scheduler-cf-template"
+  bucket = "${random_id.bucket_suffix.hex}-cf-templates"
   acl    = "private"
 }
 
