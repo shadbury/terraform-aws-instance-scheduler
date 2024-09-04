@@ -1,9 +1,3 @@
-
-provider "aws" {
-  profile = "aonsw-dev"
-  region  = "ap-southeast-2"
-}
-
 resource "aws_cloudformation_stack" "instance_scheduler" {
   name          = var.tag_name
 
